@@ -37,6 +37,19 @@ document.addEventListener('DOMContentLoaded', function () {
   // gsap.fromTo()
   const blueSquare = document.querySelector('.blueSquare')
 
+  gsap.fromTo(
+    blueSquare,
+    {
+      opacity: 0,
+      x: -500,
+    },
+    {
+      duration: 2,
+      x: 500,
+      opacity: 1,
+      ease: 'power2.out',
+    }
+  )
   // Delay & Repeat
   const circleYellow = document.querySelector('.circleYellow')
   const circleRed = document.querySelector('.circleRed')
