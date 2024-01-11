@@ -55,6 +55,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const circleRed = document.querySelector('.circleRed')
   const circleGreen = document.querySelector('.circleGreen')
 
+  gsap.to(circleYellow, {
+    duration: 1,
+    x: 500,
+  })
+  gsap.to(circleRed, {
+    duration: 1,
+    x: 500,
+    delay: 1,
+    // repeat: 3,
+    // repeat: -1 // This is Infinite
+    // yoyo: true // This is a repeat but back and forth
+  })
+  gsap.to(circleGreen, {
+    duration: 1,
+    x: 500,
+    delay: 2,
+  })
+
   // Ease
   const circleBlue = document.querySelector('.circleBlue')
 
