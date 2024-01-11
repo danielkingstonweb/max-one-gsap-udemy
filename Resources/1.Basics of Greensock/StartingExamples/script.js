@@ -26,6 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // gsap.to()
   const purpleSquare = document.querySelector('.purpleSquare')
 
+  gsap.to(purpleSquare, {
+    duration: 2,
+    x: 500,
+    rotation: 360,
+    borderRadius: '50%',
+    backgroundColor: 'green',
+    ease: 'bounce.out',
+  })
   // gsap.fromTo()
   const blueSquare = document.querySelector('.blueSquare')
 
