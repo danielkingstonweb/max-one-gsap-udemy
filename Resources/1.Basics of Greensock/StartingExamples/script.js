@@ -83,4 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   // Stagger
+  gsap.from('.box', {
+    y: -50,
+    stagger: {
+      each: 0.1,
+      from: 'end',
+    },
+  })
 })
