@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // gsap.from()
   const orangeSquare = document.querySelector('.orangeSquare')
 
+  gsap.from(orangeSquare, {
+    duration: 2,
+    x: 500,
+    opacity: 0,
+    scale: 0.5,
+    rotation: -90,
+    ease: 'bounce.out',
+  })
+
   // gsap.to()
   const purpleSquare = document.querySelector('.purpleSquare')
 
