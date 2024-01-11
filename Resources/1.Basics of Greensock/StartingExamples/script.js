@@ -76,5 +76,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // Ease
   const circleBlue = document.querySelector('.circleBlue')
 
+  gsap.to(circleBlue, {
+    x: 500,
+    duration: 2,
+    ease: 'elastic.out(3, 0.9)',
+  })
+
   // Stagger
 })
