@@ -1,49 +1,46 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.registerPlugin(ScrollTrigger)
 
-gsap.registerPlugin(ScrollTrigger);
+  // ScrollTrigger Intro
+  const navySquare = document.querySelector('.navySquare')
+  const sectionTitle = document.querySelector('h1')
 
-// ScrollTrigger Intro
-const navySquare = document.querySelector('.navySquare');
-const sectionTitle = document.querySelector('h1');
-
-gsap.to(navySquare, {
+  gsap.to(navySquare, {
     duration: 2,
     x: 500,
-    scrollTrigger: sectionTitle
-})
+    scrollTrigger: sectionTitle,
+  })
 
-// ScrollTrigger Basic Implementation
-// #f3a712
-const redSquare = document.querySelector('.redSquare');
+  // ScrollTrigger Basic Implementation
+  // #f3a712
+  const redSquare = document.querySelector('.redSquare')
 
-gsap.to(redSquare, {
+  gsap.to(redSquare, {
     duration: 10,
     x: 700,
     rotation: 360,
     backgroundColor: '#f3a712',
     scrollTrigger: {
-        trigger: redSquare,
-        start: 'top 75%',
-        end: 'bottom 25%',
-        toggleActions: 'restart pause reverse reset'
-    }
-})
+      trigger: redSquare,
+      start: 'top 75%',
+      end: 'bottom 25%',
+      toggleActions: 'restart pause reverse reset',
+    },
+  })
 
-// ScrollTrigger Scrub & Pin
-const tanSection = document.querySelector('.tanSection');
-const redBar = document.querySelector('.redBar');
+  // ScrollTrigger Scrub & Pin
+  const tanSection = document.querySelector('.tanSection')
+  const redBar = document.querySelector('.redBar')
 
-const tl = gsap.timeline();
+  const tl = gsap.timeline()
 
-tl.to(redBar, {
+  tl.to(redBar, {
     width: '100%',
     duration: 3,
     scrollTrigger: {
-        trigger: tanSection,
-        scrub: true,
-        pin: true
-    }
+      trigger: tanSection,
+      scrub: true,
+      pin: true,
+    },
+  })
 })
-
-
-});
