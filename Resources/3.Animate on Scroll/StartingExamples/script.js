@@ -32,4 +32,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // ScrollTrigger Scrub & Pin
   const tanSection = document.querySelector('.tanSection')
   const redBar = document.querySelector('.redBar')
+
+  const tl = gsap.timeline()
+
+  tl.to(redBar, {
+    width: '100%',
+    duration: 3,
+    scrollTrigger: {
+      trigger: tanSection,
+      scrub: true,
+      pin: true,
+    },
+  })
 })
