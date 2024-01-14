@@ -121,6 +121,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const shopSection = document.querySelector('.shop')
   const shopImages = document.querySelectorAll('.shop .img-responsive')
 
+  const tlShop = gsap.timeline({
+    scrollTrigger: {
+      trigger: shopSection,
+      start: 'top center',
+      scrub: true,
+    },
+  })
+
+  tlShop.from(shopImages, {
+    duration: 1,
+    opacity: 0,
+    y: 150,
+    stagger: 0.2,
+    ease: 'power1.out',
+  })
+
   /* Cta section animations */
   const ctaSection = document.querySelector('.cta')
   const ctaTitle = document.querySelector('.cta h1')
@@ -156,6 +172,10 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   tlNew
+    .to(newSection, {
+      backgroundColor: '#030303',
+      duration: 1,
+    })
     .from(newImages, {
       opacity: 0,
       y: 100,
