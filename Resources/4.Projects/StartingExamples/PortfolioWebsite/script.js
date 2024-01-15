@@ -56,6 +56,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const marquee = document.querySelector('.marquee')
   const marqueeContent = marquee.querySelector('div')
 
+  const clonedContent = marqueeContent.innerHTML.repeat(20)
+  marquee.innerHTML = clonedContent
+
+  gsap.to(marquee, {
+    xPercent: 50,
+    duration: 5,
+    ease: 'linear',
+    repeat: -1,
+    yoyo: true,
+  })
+
   /* Header section animations */
   const headerImg = document.querySelector('.hero .img-responsive')
   const headerTitle = document.querySelector('.hero h1')
@@ -124,6 +135,28 @@ document.addEventListener('DOMContentLoaded', function () {
   const skillsSection = document.querySelector('.skills')
   const skillsTitle = document.querySelector('.skills h2')
   const skillsList = document.querySelectorAll('.skills li')
+
+  const tlSkills = gsap.timeline({
+    scrollTrigger: {
+      trigger: skillsSection,
+      start: 'top center',
+    },
+  })
+
+  tlSkills
+    .from(skillsTitle, {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: 'power1.out',
+    })
+    .from(skillsList, {
+      duration: 1,
+      opacity: 0,
+      stagger: 0.2,
+      y: 50,
+      ease: 'power2.out',
+    })
 
   /* Contact section animations */
   const contactSection = document.querySelector('.contact')
